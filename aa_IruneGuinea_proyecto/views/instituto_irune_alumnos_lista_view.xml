@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--Vista para la tabla intermedia de alumnos y practicas-->
+    <record id="instituto_irune_alumnos_lista_action" model="ir.actions.act_window">
+        <field name="name">Registro de practicas</field>
+        <field name="res_model">instituto.irune.alumnos.lista</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--Vista de arbol para el modulo-->
+    <record id="instituto_irune_alumnos_lista_view_tree" model="ir.ui.view">
+        <field name="name">instituto.irune.alumnos.lista.tree</field>
+        <field name="model">instituto.irune.alumnos.lista</field>
+        <field name="arch" type="xml">
+        <tree string="Vista arbol">
+                <field name="alumno_id"/>
+                <field name="anio_realiz"/>              
+                <field name="dineros" widget="monetary" options="{'currency_field': 'currency_id'}"/> 
+                <field name="aprobadas"/>
+            </tree>
+        </field>
+    </record>
+    <!--Vista de formulario para el modulo-->
+    <record id="instituto_irune_alumnos_lista_view_form" model="ir.ui.view">
+        <field name="name">instituto.irune.alumnos.lista.form</field>
+        <field name="model">instituto.irune.alumnos.lista</field>
+        <field name="arch" type="xml">
+            <form string="Vista formulario">
+                <sheet>                
+                    <h1><field name="alumno_id"/></h1>                    
+                        <group>
+                            <field name="anio_realiz"/>
+                            <field name="aprobadas"/>
+                            <field name="currency_id"/>     <!--El dinero que le pagan-->
+                           <field name="dineros" widget="monetary" options="{'currency_field': 'currency_id'}"/> 
+                        </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

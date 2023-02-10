@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--Vista para la tabla de Alumnos-->
+
+    <record id="instituto_irune_action" model="ir.actions.act_window">
+        <field name="name">Alumnos</field>
+        <field name="res_model">instituto.irune</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+         <!--Vista de arbol para el modulo-->
+    <record id="instituto_irune_view_tree" model="ir.ui.view">
+        <field name="name">instituto.irune.tree</field>
+        <field name="model">instituto.irune</field>
+        <field name="arch" type="xml">
+        <tree string="Vista arbol">
+                <field name="name"/>
+                <field name="apellidos"/>
+                <field name="fecha_nac"/>
+                <field name="direccion"/>
+                <field name="codigo_postal"/>
+                <field name="email"/>
+                <field name="ciclo"/>
+                <field name="coche"/>
+                <field name="otros"/>
+                <field name="nota_media"/>
+                <field name="nota_media_texto"/>
+                <button name="irune_url" type="object" string="GITHUB"/>
+            </tree>
+        </field>
+    </record>
+            <!--Vista de formulario para el modulo-->
+
+    <record id="instituto_irune_view_form" model="ir.ui.view">
+        <field name="name">instituto.irune.form</field>
+        <field name="model">instituto.irune</field>
+        <field name="arch" type="xml"> 
+            <form string="Vista formulario">
+               
+
+                <sheet>
+                
+                    <h1><field name="name"/></h1>  
+                    <field name="tag_ids" widget="many2many_tags"/>                  
+                    <group>
+                        <group>
+                            <field name="apellidos"/>
+                            <field name="fecha_nac"/>
+                            <field name="email"/>
+                            <field name="github"/>
+                        </group>
+                        <group>
+                            <field name="direccion"/>
+                            <field name="codigo_postal"/>
+                        </group>
+                    </group>
+                    <notebook>
+                            <page string="Mas informacion">
+                                <group>
+                                    <field name="ciclo"/>
+                                    <field name="coche"/>
+                                    <field name="otros"/>
+                                    <field name="nota_media"/>
+                                    <field name="nota_media_texto"/>
+                                    <field name="empresa_id"/>
+                                </group>
+                            </page>
+                            <page string="Notas">
+                                <group>
+                                     <field name="actitud"/>
+                                    <field name="ejercicios"/>
+                                    <field name="proyecto"/>
+                                    <field name="examen"/>
+                                </group>
+                               
+                            </page>
+        
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+            <!--Vista de busqueda para el modulo-->
+
+    <record id="instituto_irune_view_search" model="ir.ui.view">
+        <field name="name">instituto.irune.search</field>
+        <field name="model">instituto.irune</field>
+        <field name="arch" type="xml">
+        <search string="Busqueda Instituto">
+                <field name="name"/>
+                <field name="apellidos"/>  
+                 <separator/>
+                <separator/>
+                 <group expand="1" string="Group By"> 
+                    <filter string="Tiene coche" name="coche"  context="{'group_by':'coche'}"/> <!-- agrupados por coche-->
+                </group>             
+        </search>
+        </field>
+    </record>
+</odoo>

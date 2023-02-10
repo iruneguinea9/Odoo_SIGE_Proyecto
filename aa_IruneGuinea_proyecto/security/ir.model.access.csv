@@ -1,0 +1,7 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_instituto_irune,access_instituto_irune,model_instituto_irune,base.group_user,1,0,0,0
+access_instituto_irune_empresas,access_instituto_irune_empresas,model_instituto_irune_empresas,base.group_user,1,0,0,0
+access_instituto_irune_alumnos_lista,access_instituto_irune_alumnos_lista,model_instituto_irune_alumnos_lista,base.group_user,1,0,0,0
+access_instituto_irune_tag,access_instituto_irune_tag,model_instituto_irune_tag,base.group_user,1,1,1,1
+access_instituto_irune_profesores,access_instituto_irune_profesores,model_instituto_irune_profesores,base.group_user,1,1,1,1
+access_instituto_irune_asignaturas,access_instituto_irune_asignaturas,model_instituto_irune_asignaturas,base.group_user,1,1,1,1

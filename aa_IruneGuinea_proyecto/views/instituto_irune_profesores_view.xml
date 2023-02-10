@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--Vista para la tabla de profesores-->
+    <record id="instituto_irune_profesores_action" model="ir.actions.act_window">
+        <field name="name">Profesores</field>
+        <field name="res_model">instituto.irune.profesores</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+     <!--Vista de arbol para el modulo-->
+     <record id="instituto_irune_profesores_view_tree" model="ir.ui.view">
+        <field name="name">instituto.irune.profesores.tree</field>
+        <field name="model">instituto.irune.profesores</field>
+        <field name="arch" type="xml">
+        <tree string="Vista arbol">
+                <field name="name"/>
+                <field name="apellidos"/>                           
+                <field name="email"/>
+                <field name="departamento"/>
+            </tree>
+        </field>
+    </record>
+    <!--Vista de formulario para el modulo-->
+    <record id="instituto_irune_profesores_view_form" model="ir.ui.view">
+        <field name="name">instituto.irune.profesores.form</field>
+        <field name="model">instituto.irune.profesores</field>
+        <field name="arch" type="xml">
+            <form string="Vista formulario">
+                <sheet>
+                
+                    <h1><field name="name"/></h1>
+                    <field name="asignaturas_ids" widget="many2many_tags"/>          
+                    <group>
+                        <group>
+                            <field name="apellidos"/>           
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="departamento"/>
+                        </group>
+                    </group>
+
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+                <!--Vista de busqueda para el modulo-->
+
+    <record id="instituto_irune_profesores_view_search" model="ir.ui.view">
+        <field name="name">instituto.irune.profesores.search</field>
+        <field name="model">instituto.irune.profesores</field>
+        <field name="arch" type="xml">
+        <search string="Busqueda Profesores">
+                 <group expand="1" string="Group By"> 
+                    <filter string="Departamento" name="departamento"  context="{'group_by':'departamento'}"/> <!-- agrupados por coche-->
+                </group>             
+        </search>
+        </field>
+    </record>
+</odoo>

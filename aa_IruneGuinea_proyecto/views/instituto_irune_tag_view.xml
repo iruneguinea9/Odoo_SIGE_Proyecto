@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--Vista para la tabla de caracteristicas-->
+
+    <record id="instituto_irune_tag_action" model="ir.actions.act_window">
+        <field name="name">Caracteristicas de alumnos</field>
+        <field name="res_model">instituto.irune.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+         <!--Vista de arbol para el modulo-->
+
+    <record id="instituto_irune_tag_view_tree" model="ir.ui.view">
+        <field name="name">instituto.irune.tag.tree</field>
+        <field name="model">instituto.irune.tag</field>
+        <field name="arch" type="xml">
+        <tree string="Vista arbol">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+        <!--Vista de formulario para el modulo-->
+
+    <record id="instituto_irune_tag_view_form" model="ir.ui.view">
+        <field name="name">instituto.irune.tag.form</field>
+        <field name="model">instituto.irune.tag</field>
+        <field name="arch" type="xml">
+            <form string="Vista formulario">
+                <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        
+                </sheet>
+            </form>
+        </field>
+    </record>
+     
+
+</odoo>

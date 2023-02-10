@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="instituto_irune_root" name="Instituto">
+        <menuitem id="instituto_irune_second_level_menu" name="Asignaturas" action="instituto_irune_asignaturas_action" sequence="1"/>
+        <menuitem id="instituto_irune_first_level_menu" name="Datos" sequence="2">
+                <menuitem id="instituto_irune_profesores_menu_action" action="instituto_irune_profesores_action" sequence="1"/><!--tabla profesores-->
+                <menuitem id="instituto_irune_empresas_menu_action" action="instituto_irune_empresas_action" sequence="2"/><!--tabla empresa-->
+                <menuitem id="instituto_irune_menu_action" action="instituto_irune_action" sequence="3"/><!--tabla alumno-->
+                <menuitem id="instituto_irune_alumnos_lista_menu_action" action="instituto_irune_alumnos_lista_action"/><!--Tabla intermedia-->
+                <menuitem id="instituto_irune_tag_menu_action" action="instituto_irune_tag_action"/> <!-- Añadir caracteristicas -->
+        </menuitem>
+        
+    </menuitem>
+</odoo>
